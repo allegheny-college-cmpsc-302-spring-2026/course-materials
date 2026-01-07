@@ -1,9 +1,12 @@
 ---
 import { Icon } from '@astrojs/starlight/components';
 interface contentRow {
-    date: string,
     topic: string,
-    assignment: string
+    reading: string,
+    reading_url: string,
+    assignment: string,
+    assignment_url: string,
+    presentation_url: string
 };
 const {content} = Astro.props;
 ---
@@ -17,10 +20,29 @@ const {content} = Astro.props;
             </tr>
         </thead>
         {content.map((entry:contentRow) => (
-            <tr><td colspan = 1><Icon name = "sun" /></td><td colspan = 2>{entry.date}</td></tr>
-            <tr><td colspan = 1><Icon name = "open-book" /></td><td colspan = 2>{entry.topic}</td></tr>
-            <tr><td colspan = 1><Icon name = "approve-check" /></td><td colspan = 2>{entry.assignment}</td></tr>
-            <tr><td colspan = 1><Icon name = "seti:notebook" /></td><td colspan = 2>{entry.assignment}</td></tr>
+            <tr>
+                <td colspan = 1><Icon name = "sun" /></td>
+                <td colspan = 2>
+                    {entry.topic}
+                </td>
+            </tr>
+            <tr>
+                <td colspan = 1><Icon name = "open-book" /></td>
+                <td colspan = 2>
+                    <a href = {entry.reading_url} target = "_blank">{entry.reading}</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan = 1><Icon name = "approve-check" /></td>
+                <td colspan = 2>
+                    <a href = {entry.assignment_url} target = "_blank">{entry.assignment}</a>
+                </td>
+            </tr>
+            <tr><td colspan = 1><Icon name = "seti:notebook" /></td>
+                <td colspan = 2>
+                    <a href = {entry.presentation_url}>Slides</a>
+                </td>
+            </tr>
         ))}
     </table>
 </div>
