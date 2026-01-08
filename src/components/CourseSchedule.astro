@@ -2,15 +2,21 @@
 interface unitType {
     name: string,
     weeks: object[],
-    open: boolean
+    open: boolean,
+    module: string,
+    module_url: string,
 };
 import { Accordion, AccordionItem } from 'accessible-astro-components';
 import UnitSchedule from './UnitSchedule.astro';
+import { Icon } from '@astrojs/starlight/components';
 const {content} = Astro.props;
 ---
 <Accordion class="course-schedule">
     {content.map((unit:unitType) => (
-        <AccordionItem variant="chevron" title={unit.name} open={unit.open}>
+        <AccordionItem variant="chevron" id={unit.name} title={unit.name} open={unit.open} headingLevel="h3" headingSize="h3">
+            <ul class = "unit-project">
+                <li><Icon name = "github" /><a href = {unit.module_url}>{unit.module}</a></li>
+            </ul>
             <UnitSchedule content={unit.weeks} />
         </AccordionItem>
     ))}

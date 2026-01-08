@@ -1,0 +1,5 @@
+---
+const {status} = Astro.props;
+import { Icon } from '@astrojs/starlight/components';
+---
+{status ? <Icon name = "puzzle" /> : ""}

@@ -16,6 +16,7 @@ interface classSession {
 };
 const {content} = Astro.props;
 import DayOfWeek from './DayOfWeek.astro';
+import LabMarker from './LabMarker.astro';
 ---
 <div class = "table-container">
     <table width='100%'>
@@ -46,17 +47,20 @@ import DayOfWeek from './DayOfWeek.astro';
                     <a href = {entry.assignment_url} target = "_blank">{entry.assignment}</a>
                 </td>
             </tr>
-            <tr><td colspan = 1><Icon name = "seti:notebook" /></td>
+            <tr>
+                <td colspan = 1><Icon name = "seti:notebook" /></td>
                 <td colspan = 2>
                     <a href = {entry.presentation_url}>Slides</a>
                 </td>
             </tr>
             <tr>
-                {entry.dates.map((session:classSession) => (
+            {entry.dates.map((session:classSession) => (
+                <tr>
                     <td><DayOfWeek date = {session.date}/></td>
-                    <td>{session.topic}</td>
+                    <td><LabMarker status = {session.lab}/>{session.topic}</td>
                     <td>{session.assignment}</td>
-                ))}
+                </tr>
+            ))}
             </tr>
         ))}
         </tbody>

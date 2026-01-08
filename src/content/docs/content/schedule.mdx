@@ -4,6 +4,9 @@ description: Schedule of course content and assignments
 prev: false
 units:
     - name: Information Architecture, Content, Basic Web Skills
+      open: true
+      module: Personal Portfolio (Part 1)
+      module_url: https://example.com
       weeks:
         - topic: Introduction to Design Language
           reading: Hello Web Design, Ch. 2 + 3
@@ -13,7 +16,14 @@ units:
           presentation_url: https://test
           dates:
             - date: 01-12-2026
-              topic: This
+              topic: Crash Course in Design Vocabulary
+            - date: 01-14-2026
+              topic: Crash Course in Design Vocabulary
+            - date: 01-14-2026
+              topic: Design Inspiration Presentations
+              lab: true
+            - date: 01-16-2026
+              topic: Design Inspiration Presentations
         - topic:
           reading:
           reading_url:
@@ -21,8 +31,8 @@ units:
           assignment_url:
           presentation_url:
           dates:
-            - date: 01-12-2026
-              topic: This
+            - date: 01-14-2026
+              topic: Crash Course in Design Vocabulary
     - name: Enhancing Your Portfolio
       weeks:
         - topic:
@@ -34,6 +44,7 @@ units:
           dates:
             - date: 01-12-2026
               topic: This
+      open: false
     - name: Interactive Front-End Development
       weeks:
         - topic:
@@ -45,7 +56,27 @@ units:
           dates:
             - date: 01-12-2026
               topic: This
+      open: false
 ---
 import CourseSchedule from '../../../components/CourseSchedule.astro';
+import { Icon } from '@astrojs/starlight/components';
+
+## Schedule
+
+The schedule below is broken into the three `3` major units which structure the class. This should be considered
+a _living document_, meaning that changes will likely occur. In the event of a change, you will be notified at least
+24 hours before the change takes effect. A due date will _never_ be moved forward using this rule.
+
+### Schedule Legend
+
+<ul class = "icon-legend">
+    <li><Icon name = "sun" />Weekly theme</li>
+    <li><Icon name = "open-book" />Relevent reading(s) for the week</li>
+    <li><Icon name = "approve-check" />Benchmark of the week</li>
+    <li><Icon name = "seti:notebook" />Link to weekly slides</li>
+    <li><Icon name = "puzzle" />Lab session indicator</li>
+</ul>
+
+## Units
 
 <CourseSchedule content={frontmatter.units} />

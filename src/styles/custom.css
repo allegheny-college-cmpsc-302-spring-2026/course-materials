@@ -97,6 +97,21 @@
 	vertical-align: middle;
 }
 
+.icon-legend {
+	list-style-type: none;
+}
+
+.icon-legend li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.icon-legend svg {
+	display: inline-block;
+	margin: 0 1rem 0 0;
+}
+
 .course-schedule details {
 	margin-bottom: 0;
 	border-left: 0;
@@ -110,6 +125,27 @@
 
 .course-schedule .table-container {
 	width: 100%;
+}
+
+.course-schedule svg {
+	display: inline;
+	margin-right: 1rem;
+}
+
+.course-schedule .unit-project {
+	margin-left: 0;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.unit-project li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.unit-project svg {
+	margin-right: 1rem;
 }
 
 @media screen and (max-width: 768px) {
