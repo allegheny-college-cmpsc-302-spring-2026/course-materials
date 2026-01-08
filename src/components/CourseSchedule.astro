@@ -1,6 +1,7 @@
 ---
 interface unitType {
     name: string,
+    offset: number,
     weeks: object[],
     open: boolean,
     module: string,
@@ -17,7 +18,7 @@ const {content} = Astro.props;
             <ul class = "unit-project">
                 <li><Icon name = "github" /><a href = {unit.module_url}>{unit.module}</a></li>
             </ul>
-            <UnitSchedule content={unit.weeks} />
+            <UnitSchedule content={unit.weeks} unitOffset={unit.offset} />
         </AccordionItem>
     ))}
 </Accordion>
