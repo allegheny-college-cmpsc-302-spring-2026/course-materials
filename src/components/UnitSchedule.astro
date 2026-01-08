@@ -6,12 +6,19 @@ interface contentRow {
     reading_url: string,
     assignment: string,
     assignment_url: string,
-    presentation_url: string
+    presentation_url: string,
+    dates: classSession[]
+};
+interface classSession {
+    date: Date,
+    topic: string,
+    assignment: string
 };
 const {content} = Astro.props;
+import DayOfWeek from './DayOfWeek.astro';
 ---
 <div class = "table-container">
-    <table>
+    <table width='100%'>
         <thead>
             <tr>
                 <td>Date</td>
@@ -19,6 +26,7 @@ const {content} = Astro.props;
                 <td>Assignment Due</td>
             </tr>
         </thead>
+        <tbody>
         {content.map((entry:contentRow) => (
             <tr>
                 <td colspan = 1><Icon name = "sun" /></td>
@@ -43,6 +51,14 @@ const {content} = Astro.props;
                     <a href = {entry.presentation_url}>Slides</a>
                 </td>
             </tr>
+            <tr>
+                {entry.dates.map((session:classSession) => (
+                    <td><DayOfWeek date = {session.date}/></td>
+                    <td>{session.topic}</td>
+                    <td>{session.assignment}</td>
+                ))}
+            </tr>
         ))}
+        </tbody>
     </table>
 </div>
