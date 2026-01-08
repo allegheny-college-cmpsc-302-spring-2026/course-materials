@@ -2,8 +2,7 @@
 import { Icon } from '@astrojs/starlight/components';
 interface contentRow {
     topic: string,
-    reading: string,
-    reading_url: string,
+    readings: any,
     assignment: string,
     assignment_url: string,
     presentation_url: string,
@@ -17,6 +16,7 @@ interface classSession {
 const {content} = Astro.props;
 import DayOfWeek from './DayOfWeek.astro';
 import LabMarker from './LabMarker.astro';
+import ReadingAssignments from './ReadingAssignments.astro';
 ---
 <div class = "table-container">
     <table width='100%'>
@@ -36,12 +36,9 @@ import LabMarker from './LabMarker.astro';
                     {entry.topic}
                 </td>
             </tr>
-            <tr>
-                <td colspan = 1><Icon name = "open-book" /></td>
-                <td colspan = 2>
-                    <a href = {entry.reading_url} target = "_blank">{entry.reading}</a>
-                </td>
-            </tr>
+            <!-- -->
+            <ReadingAssignments readings={entry.readings} />
+            <!-- -->
             <tr>
                 <td colspan = 1><Icon name = "approve-check" /></td>
                 <td colspan = 2>

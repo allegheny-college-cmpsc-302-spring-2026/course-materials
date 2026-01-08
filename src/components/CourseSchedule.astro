@@ -13,7 +13,7 @@ const {content} = Astro.props;
 ---
 <Accordion class="course-schedule">
     {content.map((unit:unitType) => (
-        <AccordionItem variant="chevron" id={unit.name} title={unit.name} open={unit.open} headingLevel="h3" headingSize="h3">
+        <AccordionItem variant="chevron" title={unit.name} open={unit.open} headingLevel="h3" headingSize="h3">
             <ul class = "unit-project">
                 <li><Icon name = "github" /><a href = {unit.module_url}>{unit.module}</a></li>
             </ul>
