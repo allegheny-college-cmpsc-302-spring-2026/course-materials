@@ -6,12 +6,243 @@ sidebar:
   order: 2
 ---
 import { Icon } from '@astrojs/starlight/components';
+import ColorSquare from '../../../components/ColorSquare.astro';
 import Slide from '../../../components/Slides/Slide.astro';
 import SlideOnly from '../../../components/Slides/SlideOnly.astro';
 import Presentation from '../../../components/Slides/Presentation.astro';
+
+import { Image } from 'astro:assets';
+
+import nytAlign from '../../../assets/presentation-img/design-vocab/nyt-align.png';
+import symmetry from '../../../assets/presentation-img/design-vocab/symmetry.png';
+import asymmetry from '../../../assets/presentation-img/design-vocab/asymmetry.png';
+import radial from '../../../assets/presentation-img/design-vocab/radial.png';
+import unity from '../../../assets/presentation-img/design-vocab/unity.jpg';
+import doUnity from '../../../assets/presentation-img/design-vocab/do-unity.png';
+import negativeSpace from '../../../assets/presentation-img/design-vocab/negative-space.png';
+import colorWheel from '../../../assets/presentation-img/design-vocab/color-wheel.webp';
+import colorWheelRelationships from '../../../assets/presentation-img/design-vocab/color-relationships.webp';
 
 :::tip[Pages are presentations!] 
 Click the `Start Presentation` button below to visualize this page as a presentation.
 :::
 
 <Presentation />
+
+This week, we meet a few design terms that help us both:
+
+1. appraise design qualities of a given web property
+2. understand which to employ and how to use them in our sites
+
+## Learning Objectives
+
+This lesson achieves learning objectives:
+
+3. Design front-end user experiences using accepted web design patterns, methods, and information structures.
+4. Identify and use strategies of successful visual rhetoric for the web.
+
+## Text
+
+> <Icon name = "open-book" class = "icon-prepend" /> <a href = "https://drive.google.com/file/d/1SKenrvlIdFnnyse37cD8KfLzj-ulXYOD/view?usp=sharing&page=28" target = "_blank">_Hello Web Design_, Chapter 2 + 3</a>
+
+<Slide centered>
+## Design Vocabulary 
+</Slide>
+
+<Slide centered>
+
+### Relevant Terms
+
+- Alignment
+  - Balance
+  - Unity
+  - Visual Hierarchy
+- Negative Space
+- Color Theory
+- Typography
+
+</Slide>
+
+<Slide>
+#### Alignment
+
+>  The way that the different elements in a design are arranged, usually in relation to a page or document.
+
+##### Grid
+
+<div class = "slide-grid-two-column">
+    <div>
+        <Image 
+            src={nytAlign}
+            alt="CMPSC 302: Web Design, Course Logo"
+            loading="lazy"
+        />
+    </div>
+    <div>
+        > A system of horizontal and vertical columns and guides used to provide structure, consistency, 
+        > accuracy in any design.
+        Grids allow for vertical and horizontal alignment, calculated for the designer by the web browser;
+        it's set and forget!
+    </div>
+</div>
+</Slide>
+
+<Slide>
+#### Balance
+> Distribution of visual assets by "weight" to create design `symmetry`, `asymmetry`, or `radial symmetry`.
+##### Symmetry
+<div class = "slide-grid-two-column">
+    <div>
+        <Image 
+            src={symmetry}
+            alt="CMPSC 302: Web Design, Course Logo"
+            loading="lazy"
+        />
+    </div>
+    <div>
+        `Symmetrical` balance distributes page elements at roughly equal distances and hierarchies. When document
+        correctly, the distribution of items can create stunning visual effects.
+    </div>
+</div>
+</Slide>
+
+<Slide>
+##### Asymmetry
+<div class = "slide-grid-two-column">
+    <div>
+        <Image 
+            src={asymmetry}
+            alt="CMPSC 302: Web Design, Course Logo"
+            loading="lazy"
+        />
+    </div>
+    <div>
+        `Asymmetrical` positions elements of different "weights" to create a sense of hierarchical _contrast_, where
+        specific elements gain more prominence and attention.
+    </div>
+</div>
+</Slide>
+
+<Slide>
+##### Radial Symmetry
+<div class = "slide-grid-two-column">
+    <div>
+        <Image 
+            src={radial}
+            alt="CMPSC 302: Web Design, Course Logo"
+            loading="lazy"
+        />
+    </div>
+    <div>
+        `Radial` arrangements call attention to a central element which may be flanked by other elements designed
+        to attract visual attention to a specific spot on the screen. 
+    </div>
+</div>
+This design leverages a the layout to draw customer attention to the seller's optimal outcome: the plan they _want_ 
+the customer to sign up for, though there are other options.
+</Slide>
+
+<Slide>
+#### Unity
+
+> Cohesive combination of layouts, shapes, colors, typefaces, and fonts that offers as sense of consistency to a design,
+> elements working togther to support the entire design.
+
+<div class = "slide-grid-two-column">
+  <div>
+    <Image 
+        src={unity}
+        alt="CMPSC 302: Web Design, Course Logo"
+        loading="lazy"
+    />
+    </div>
+    <div>
+        <Image 
+        src={doUnity}
+        alt="CMPSC 302: Web Design, Course Logo"
+        loading="lazy"
+    />
+    </div>
+</div>
+
+</Slide>
+
+<Slide>
+#### Visual Hierarchy
+> Use of item weights to direct user attention to specific areas of a page or a block of text.
+<div class = "slide-grid-two-column">
+<div>
+        <Image 
+            src={radial}
+            alt="CMPSC 302: Web Design, Course Logo"
+            loading="lazy"
+        />
+    </div>
+    <div>
+        Reconsider our example of `Radial` symmetry and consider the most important information on the page. 
+    </div>
+</div>
+In what ways does this image demonstrate hierarchy of information through design elements?
+</Slide>
+
+
+<Slide>
+#### Negative Space
+> Another name for "white space"; space between elements not populated by design elements. Many designers describe
+> negative space as space for "breath."
+<div class = "slide-grid-two-column">
+<div>
+        <Image 
+            src={negativeSpace}
+            alt="CMPSC 302: Web Design, Course Logo"
+            loading="lazy"
+        />
+    </div>
+    <div>
+        Think about this familiar page. How does Google use negative space to instruct you and keep your focusing
+        on the purpose of the page?
+    </div>
+</div>
+</Slide>
+
+<Slide>
+#### Color Theory
+> The use of color to shape understanding and influence perception.
+<div class = "slide-grid-two-column">
+<div>
+        <Image 
+            src={colorWheel}
+            alt="CMPSC 302: Web Design, Course Logo"
+            loading="lazy"
+            width="400"
+        />
+    </div>
+    <div>
+        The typical color space is made up of `R`ed, `G`reen, and `B`lue color values, hence the `RGB`
+        designations that describe colors, typically seen in "hex" format (e.g., #FB9802, which results in 
+        the color <ColorSquare value="#FB9802"/>).
+    </div>
+</div>
+</Slide>
+
+<Slide>
+#### Color Palettes
+
+<div class = "slide-grid-two-column">
+    <div>
+        Designers use various relationships between colors to define `color palettes` which constitute
+        one way to introduce unity and hierarchy to a site design. For example, designers may use:
+        * Analogous palettes: <ColorSquare value="#66af31" /><ColorSquare value="#0492cc" /><ColorSquare value="#0246fd"/>
+        * Triadic palettes: <ColorSquare value="#fdfc33" /><ColorSquare value="#0246fd"/><ColorSquare value="#fd2713"/>
+        * Quarternary palettes: <ColorSquare value="#66af31" /><ColorSquare value="#0246fd"/><ColorSquare value="#fd2713"/><ColorSquare value="#FB9802"/>
+    </div>
+    <div>
+        <Image 
+            src={colorWheelRelationships}
+            alt="CMPSC 302: Web Design, Course Logo"
+            loading="lazy"
+            width="400"
+        />
+    </div>
+</div>
+</Slide>
