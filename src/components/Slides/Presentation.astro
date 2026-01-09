@@ -47,6 +47,8 @@
   };
 
   const displaySlides = () => {
+    let sidebar = document.getElementById('starlight__sidebar') as HTMLElement;
+    sidebar.style.display = "none";
     for (let i = 0; i < slides.length; i++) {
       slides[i].classList.remove("active", "inactive", ...transitionClasses);
 
@@ -129,6 +131,8 @@
       const isEscape = ev.key === "Escape";
       if (isEscape) {
         endPresentation();
+        let sidebar = document.getElementById('starlight__sidebar') as HTMLElement;
+        sidebar.style.display = "block";
         return;
       }
 
